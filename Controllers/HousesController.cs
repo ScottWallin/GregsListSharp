@@ -1,3 +1,5 @@
+using GregsList.Services;
+
 namespace GregsList.Controllers;
 
 [ApiController]
@@ -6,12 +8,9 @@ namespace GregsList.Controllers;
 public class HousesController : ControllerBase
 {
   private readonly HousesService _housesService;
-  public HousesController(HousesService housesService)
-  {
-    _housesService = housesService;
-  }
+
   [HttpGet]
-  public ActionResult<List<CreatedAtActionResult>> GetAllHouses()
+  public ActionResult<List<House>> GetAllHouses()
   {
     try
     {
